@@ -26,6 +26,7 @@ public class BinarySearch {
     public static void main(String[] args) {
 
         int[] sortArray = {1, 3, 4, 6, 8, 10 ,12};
+        //int[] sortArray = {1,1,2,2,2,3,4,4};
         int target = 8;
         int index = binarySearch(sortArray, target);
         System.out.println("Index: "+ index);
