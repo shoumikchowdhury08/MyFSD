@@ -21,13 +21,16 @@ public class InfixtoPostfix {
 
         for(String element:expression){
             if(isOperator(element)){
-                while(!stack.isEmpty() && priority.get(stack.peek()) <= priority.get(element)){
+                while(!stack.isEmpty() && priority.get(stack.peek()) > priority.get(element)){
                     System.out.print(stack.pop()+" ");
                 }
                 stack.push(element);
             }
             else {
                 System.out.print(element+" ");
+            }
+            while (!stack.isEmpty()){
+                System.out.print(stack.pop());
             }
         }
     }
@@ -37,3 +40,5 @@ public class InfixtoPostfix {
         convertInfixtoPostfix(expression);
     }
 }
+
+// 25 + 5 * 3 - 10  --> 25 5 3 * +
